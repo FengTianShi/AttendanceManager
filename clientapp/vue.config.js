@@ -1,4 +1,4 @@
 module.exports = {
-  outputDir: '../AttendanceManager.Api/wwwroot/client',
-  publicPath: '/client'
-};
+  publicPath: '/client',
+  outputDir: '../AttendanceManager.Api/wwwroot/client'
+}
