@@ -14,7 +14,7 @@ namespace AttendanceManager.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "hello", "from server" };
         }
 
         // GET api/values/5
