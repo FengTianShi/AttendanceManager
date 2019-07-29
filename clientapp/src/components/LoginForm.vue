@@ -1,6 +1,6 @@
 <template>
   <v-layout align-center justify-center>
-    <v-flex xs10 sm8 md4>
+    <v-flex xs11 sm9 md7 lg5 xl3>
       <v-card class="elevation-12">
         <v-toolbar dark flat>
           <v-toolbar-title>
