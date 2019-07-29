@@ -21,11 +21,27 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left>
+    <v-app-bar app prominent clipped-left src="https://picsum.photos/1920/1080?random">
       <v-app-bar-nav-icon v-if="isShowMeun" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <v-icon>event_available</v-icon>&nbsp;Attendance Manager&trade;
       </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn text>Link 1</v-btn>
+        <v-btn text>Link 2</v-btn>
+        <v-btn text>Link 3</v-btn>
+      </v-toolbar-items>
+
+      <v-btn icon>
+        <v-icon>mdi-export-variant</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-delete-circle</v-icon>
+      </v-btn>
+      <v-btn icon>
+        <v-icon>mdi-plus-circle</v-icon>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>

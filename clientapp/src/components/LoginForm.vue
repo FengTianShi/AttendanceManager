@@ -13,6 +13,7 @@
           <v-text-field label="Password" prepend-icon="lock" type="password"></v-text-field>
         </v-card-text>
         <v-card-actions>
+          <v-checkbox v-model="checkbox" label="Remember me"></v-checkbox>
           <v-spacer></v-spacer>
           <v-btn color="teal">Sign up</v-btn>
           <v-btn color="red">
@@ -28,5 +29,11 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({});
+export default Vue.extend({
+  data() {
+    return {
+      checkbox: true,
+    };
+  }
+});
 </script>

@@ -1,46 +1,62 @@
 <template>
-  <div>
-    <v-container grid-list-md text-center>
-      <v-layout wrap>
-        <v-flex xs12>
-          <v-card dark color="primary">
-            <v-card-text class="px-0">12</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 2" :key="`6${i}`" xs6>
-          <v-card dark color="secondary">
-            <v-card-text class="px-0">6</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 3" :key="`4${i}`" xs4>
-          <v-card dark color="primary">
-            <v-card-text class="px-0">4</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 4" :key="`3${i}`" xs3>
-          <v-card dark color="secondary">
-            <v-card-text class="px-0">3</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 6" :key="`2${i}`" xs2>
-          <v-card dark color="primary">
-            <v-card-text class="px-0">2</v-card-text>
-          </v-card>
-        </v-flex>
-        <v-flex v-for="i in 12" :key="`1${i}`" xs1>
-          <v-card dark color="secondary">
-            <v-card-text class="px-0">1</v-card-text>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </div>
+  <v-container>
+    <v-layout align-center justify-center>
+      <v-flex>
+        <v-card>
+          <v-card-text>
+            <v-layout wrap>
+              <v-flex xs12 md6>
+                <span>Scheme</span>
+                <v-switch v-model="$vuetify.theme.dark" primary label="Dark"></v-switch>
+              </v-flex>
+              <v-flex xs12 md6>
+                <span>Drawer</span>
+                <v-radio-group v-model="primaryDrawer.type" column>
+                  <v-radio
+                    v-for="drawer in drawers"
+                    :key="drawer"
+                    :label="drawer"
+                    :value="drawer.toLowerCase()"
+                    primary
+                  ></v-radio>
+                </v-radio-group>
+                <v-switch v-model="primaryDrawer.clipped" label="Clipped" primary></v-switch>
+                <v-switch v-model="primaryDrawer.floating" label="Floating" primary></v-switch>
+                <v-switch v-model="primaryDrawer.mini" label="Mini" primary></v-switch>
+              </v-flex>
+              <v-flex xs12 md6>
+                <span>Footer</span>
+                <v-switch v-model="footer.inset" label="Inset" primary></v-switch>
+              </v-flex>
+            </v-layout>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn text>Cancel</v-btn>
+            <v-btn text color="primary">Submit</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 
 export default Vue.extend({
-  data: () => ({})
+  data: () => ({
+    drawers: ["Default (no property)", "Permanent", "Temporary"],
+    primaryDrawer: {
+      model: null,
+      type: "default (no property)",
+      clipped: false,
+      floating: false,
+      mini: false
+    },
+    footer: {
+      inset: false
+    }
+  })
 });
 </script>

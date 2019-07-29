@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <v-container>
+    <v-container fluid>
       <HomeComp1 />
       <HomeComp2 />
       <HomeComp3 />
