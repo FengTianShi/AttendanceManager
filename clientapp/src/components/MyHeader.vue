@@ -36,7 +36,7 @@ import Vue from "vue";
 export default Vue.extend({
   data: () => ({
     drawer: false,
-    isShowMeun:false
+    isShowMeun: true
   })
 });
 </script>

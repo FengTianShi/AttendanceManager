@@ -1,6 +1,6 @@
 <template >
   <v-footer app class="grey--text">
-    <span>&copy; 2019</span>
+    <span>&copy; 2019 NO-NAME</span>
     <v-spacer></v-spacer>
     <span>Contributed by Feng & Wang</span>
   </v-footer>
