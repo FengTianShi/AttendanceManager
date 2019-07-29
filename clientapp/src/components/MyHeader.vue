@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-if="isShowMeun" v-model="drawer" app clipped>
+    <v-navigation-drawer v-if="isShowMeun" v-model="drawer" app clipped color="#303030">
       <v-list dense>
         <v-list-item>
           <v-list-item-action>
@@ -27,21 +27,6 @@
         <v-icon>event_available</v-icon>&nbsp;Attendance Manager&trade;
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
-        <v-btn text>Link 1</v-btn>
-        <v-btn text>Link 2</v-btn>
-        <v-btn text>Link 3</v-btn>
-      </v-toolbar-items>
-
-      <v-btn icon>
-        <v-icon>mdi-export-variant</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-delete-circle</v-icon>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>mdi-plus-circle</v-icon>
-      </v-btn>
     </v-app-bar>
   </div>
 </template>
