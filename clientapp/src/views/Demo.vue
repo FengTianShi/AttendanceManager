@@ -9,7 +9,7 @@
                 <v-icon>add</v-icon>Add
               </v-btn>
               <v-btn color="error">
-                <v-icon>add</v-icon>Delete
+                <v-icon>delete</v-icon>Delete
               </v-btn>
             </v-card-actions>
             <v-data-table
@@ -18,6 +18,30 @@
               :items-per-page="5"
               class="elevation-1"
             ></v-data-table>
+          </v-card>
+
+          <v-card class="mt-2">
+            <v-card-actions>
+              <v-btn color="primary">
+                <v-icon>add</v-icon>Add
+              </v-btn>
+              <v-btn color="error">
+                <v-icon>delete</v-icon>Delete
+              </v-btn>
+            </v-card-actions>
+            <v-data-table
+              v-model="selected"
+              :headers="headers"
+              :items="desserts"
+              :single-select="singleSelect"
+              item-key="name"
+              show-select
+              class="elevation-1"
+            >
+              <template v-slot:top>
+                <v-switch v-model="singleSelect" label="Single select" class="pa-3"></v-switch>
+              </template>
+            </v-data-table>
           </v-card>
         </v-flex>
       </v-layout>
@@ -31,6 +55,8 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
+      singleSelect: false,
+      selected: [],
       headers: [
         {
           text: "Dessert (100g serving)",
