@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-if="isShowMeun" v-model="drawer" app clipped>
+    <v-navigation-drawer v-if="isShowMenu" v-model="drawer" app clipped>
       <v-list dense>
         <v-list-item>
           <v-list-item-action>
@@ -22,7 +22,7 @@
     </v-navigation-drawer>
 
     <v-app-bar app prominent clipped-left src="https://picsum.photos/1920/1080?random">
-      <v-app-bar-nav-icon v-if="isShowMeun" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="isShowMenu" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>
         <v-icon>event_available</v-icon>&nbsp;Attendance Manager&trade;
       </v-toolbar-title>
@@ -37,7 +37,7 @@ import Vue from "vue";
 export default Vue.extend({
   data: () => ({
     drawer: false,
-    isShowMeun: true
+    isShowMenu: false
   })
 });
 </script>
