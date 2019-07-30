@@ -103,7 +103,7 @@ namespace AttendanceManager.Api.Helper
 
                     trun.Commit();
 
-                    return updateRowNum > 1;
+                    return updateRowNum > 0;
                 }
                 catch (Exception e)
                 {
@@ -138,7 +138,7 @@ namespace AttendanceManager.Api.Helper
 
                     trun.Commit();
 
-                    return updateRowNum > 1;
+                    return updateRowNum > 0;
                 }
                 catch (Exception e)
                 {
@@ -177,7 +177,7 @@ namespace AttendanceManager.Api.Helper
 
                     trun.Commit();
 
-                    return updateRowNum > 1;
+                    return updateRowNum > 0;
                 }
                 catch (Exception e)
                 {

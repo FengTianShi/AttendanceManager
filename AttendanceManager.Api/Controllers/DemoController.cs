@@ -22,6 +22,7 @@ namespace AttendanceManager.Api.Controllers
         [HttpGet("QueryAllPersonInfoAsync")]
         public async Task<IList<PersonInfoModel>> QueryAllPersonInfoAsync()
         {
+            logger.Debug("Access to QueryAllPersonInfoAsync");
             return await demoManager.QueryAllPersonInfoAsync();
         }
 
