@@ -6,12 +6,14 @@ using AttendanceManager.Api.Models;
 using Dapper;
 using Giga.Monitor.Core.Data.Postgres;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 
 namespace AttendanceManager.Api.Helper
 {
     public class DemoManager : IDemoManager
     {
         private readonly PostgresContext storage;
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         public DemoManager(PostgresContext storage)
         {
@@ -39,6 +41,7 @@ namespace AttendanceManager.Api.Helper
             }
             catch (Exception e)
             {
+                logger.Error(e.Message);
                 throw e;
             }
         }
@@ -63,7 +66,8 @@ namespace AttendanceManager.Api.Helper
             }
             catch (Exception e)
             {
-                throw;
+                logger.Error(e.Message);
+                throw e;
             }
         }
     }

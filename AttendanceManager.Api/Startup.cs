@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using NLog.Web;
 using Swashbuckle.AspNetCore.Swagger;
-
+#pragma warning disable 0618
 
 namespace AttendanceManager.Api
 {

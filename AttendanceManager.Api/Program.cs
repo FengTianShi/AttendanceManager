@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using NLog.Web;
 
 namespace AttendanceManager.Api
 {
@@ -13,7 +12,6 @@ namespace AttendanceManager.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseNLog()
                 .UseStartup<Startup>();
     }
 }
