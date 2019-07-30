@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-if="isShowMeun" v-model="drawer" app clipped color="#303030">
+    <v-navigation-drawer v-if="isShowMeun" v-model="drawer" app clipped>
       <v-list dense>
         <v-list-item>
           <v-list-item-action>
