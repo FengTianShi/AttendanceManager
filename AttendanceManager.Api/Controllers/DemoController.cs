@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AttendanceManager.Api.Helper;
 using AttendanceManager.Api.Models;
 using Microsoft.AspNetCore.Mvc;
+using NLog;
 
 namespace AttendanceManager.Api.Controllers
 {
@@ -11,6 +12,7 @@ namespace AttendanceManager.Api.Controllers
     public class DemoController : ControllerBase
     {
         private readonly IDemoManager demoManager;
+        private readonly Logger logger = LogManager.GetCurrentClassLogger();
 
         public DemoController(IDemoManager demoManager)
         {
@@ -20,13 +22,24 @@ namespace AttendanceManager.Api.Controllers
         [HttpPost("queryPersonInfoAsync")]
         public ActionResult<bool> QueryPersonInfoAsync()
         {
+            logger.Trace("Trace Message");
+            logger.Debug("Debug Message");
+            logger.Info("Info Message");
+            logger.Error("Error Message");
+            logger.Fatal("Fatal Message");
             return false;
         }
 
-        [HttpGet]
-        public async Task<IList<PersonInfoModel>> TestAsync()
+        [HttpGet("testQueryAllPersonInfoAsync")]
+        public async Task<IList<PersonInfoModel>> QueryAllPersonInfoAsync()
         {
             return await demoManager.QueryAllPersonInfoAsync();
+        }
+
+        [HttpGet("testQueryPersonInfoByIdAsync")]
+        public async Task<PersonInfoModel> QueryPersonInfoByIdAsync()
+        {
+            return await demoManager.QueryPersonInfoByIdAsync(1);
         }
 
         //// GET api/values
