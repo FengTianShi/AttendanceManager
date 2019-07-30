@@ -18,14 +18,9 @@ export default Vue.extend({
     MyHeader,
     MyFooter
   },
-  data: () => ({
-    drawer: false
-  }),
   created() {
     // @ts-ignore
     this.$vuetify.theme.dark = true;
   }
 });
 </script>
-
-
