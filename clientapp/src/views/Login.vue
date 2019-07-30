@@ -39,16 +39,16 @@ namespace AttendanceManager {
     }
 
     initialize(): void {
-      fetch("/api/hello/getIsRememberMe", {
-        method: "Post",
-        credentials: "same-origin"
-      })
-        .then(response => {
-          return response.json();
-        })
-        .then((result: boolean) => {
-          this.isRememberMe = result;
-        });
+      // fetch("/api/hello/getIsRememberMe", {
+      //   method: "Post",
+      //   credentials: "same-origin"
+      // })
+      //   .then(response => {
+      //     return response.json();
+      //   })
+      //   .then((result: boolean) => {
+      //     this.isRememberMe = result;
+      //   });
     }
   }
 }

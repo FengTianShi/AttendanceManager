@@ -6,7 +6,11 @@ namespace AttendanceManager.Api.Helper
 {
     public interface IDemoManager
     {
-        Task<PersonInfoModel> QueryPersonInfoByIdAsync(int id);
         Task<IList<PersonInfoModel>> QueryAllPersonInfoAsync();
+        Task<PersonInfoModel> QueryPersonInfoByIdAsync(int id);
+        Task<bool> InsertPersonInfoAsync(PersonInfoModel person);
+        Task<bool> UpdatePersonInfoByIdAsync(PersonInfoModel person);
+        Task<bool> DeletePersonInfoByIdAsync(int id);
+
     }
 }

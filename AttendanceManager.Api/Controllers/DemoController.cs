@@ -7,7 +7,7 @@ using NLog;
 
 namespace AttendanceManager.Api.Controllers
 {
-    [Route("api/demo")]
+    [Route("Api/Demo")]
     [ApiController]
     public class DemoController : ControllerBase
     {
@@ -19,59 +19,67 @@ namespace AttendanceManager.Api.Controllers
             this.demoManager = demoManager;
         }
 
-        [HttpPost("queryPersonInfoAsync")]
-        public ActionResult<bool> QueryPersonInfoAsync()
-        {
-            logger.Trace("Trace Message");
-            logger.Debug("Debug Message");
-            logger.Info("Info Message");
-            logger.Error("Error Message");
-            logger.Fatal("Fatal Message");
-            return false;
-        }
-
-        [HttpGet("testQueryAllPersonInfoAsync")]
+        [HttpGet("QueryAllPersonInfoAsync")]
         public async Task<IList<PersonInfoModel>> QueryAllPersonInfoAsync()
         {
             return await demoManager.QueryAllPersonInfoAsync();
         }
 
-        [HttpGet("testQueryPersonInfoByIdAsync")]
-        public async Task<PersonInfoModel> QueryPersonInfoByIdAsync()
+        [HttpPost("QueryPersonInfoByIdAsync")]
+        public async Task<PersonInfoModel> QueryPersonInfoByIdAsync([FromBody] int id)
         {
-            return await demoManager.QueryPersonInfoByIdAsync(1);
+            return await demoManager.QueryPersonInfoByIdAsync(id);
         }
 
-        //// GET api/values
-        //[HttpGet]
-        //public ActionResult<IEnumerable<string>> Get()
-        //{
-        //    return new string[] { "hello", "from server" };
-        //}
+        [HttpPost("DeletePersonInfoByIdAsync")]
+        public async Task<bool> DeletePersonInfoByIdAsync([FromBody] int id)
+        {
+            return await demoManager.DeletePersonInfoByIdAsync(id);
+        }
 
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public ActionResult<string> Get(int id)
-        //{
-        //    return "value";
-        //}
+        [HttpPost("UpdatePersonInfoByIdAsync")]
+        public async Task<bool> UpdatePersonInfoByIdAsync([FromBody] PersonInfoModel person)
+        {
+            return await demoManager.UpdatePersonInfoByIdAsync(person);
+        }
 
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+        [HttpPost("InsertPersonInfoAsync")]
+        public async Task<bool> InsertPersonInfoAsync([FromBody] PersonInfoModel person)
+        {
+            return await demoManager.InsertPersonInfoAsync(person);
+        }
     }
 }
+
+//Demo
+//// GET api/values
+//[HttpGet]
+//public ActionResult<IEnumerable<string>> Get()
+//{
+//    return new string[] { "hello", "from server" };
+//}
+
+//// GET api/values/5
+//[HttpGet("{id}")]
+//public ActionResult<string> Get(int id)
+//{
+//    return "value";
+//}
+
+//// POST api/values
+//[HttpPost]
+//public void Post([FromBody] string value)
+//{
+//}
+
+//// PUT api/values/5
+//[HttpPut("{id}")]
+//public void Put(int id, [FromBody] string value)
+//{
+//}
+
+//// DELETE api/values/5
+//[HttpDelete("{id}")]
+//public void Delete(int id)
+//{
+//}
