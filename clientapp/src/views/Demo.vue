@@ -3,23 +3,6 @@
     <v-container>
       <v-layout justify-center>
         <v-flex xs12>
-          <v-card>
-            <v-card-actions>
-              <v-btn color="primary">
-                <v-icon>add</v-icon>Add
-              </v-btn>
-              <v-btn color="error">
-                <v-icon>delete</v-icon>Delete
-              </v-btn>
-            </v-card-actions>
-            <v-data-table
-              :headers="headers"
-              :items="desserts"
-              :items-per-page="5"
-              class="elevation-1"
-            ></v-data-table>
-          </v-card>
-
           <v-card class="mt-2">
             <v-card-actions>
               <v-btn color="primary">
